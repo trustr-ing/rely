@@ -141,7 +141,7 @@ func (t *timeIndex) remove(interval intervalFilter) {
 // Candidates returns the set of subscription IDs that are likely to match
 // the event with the provided creation time.
 // It returns whether it found any candidates.
-//func (t *timeIndex) Candidates(createdAt nostr.Timestamp) (*smallset.Ordered[sID], bool) {
+func (t *timeIndex) Candidates(createdAt nostr.Timestamp) (*smallset.Ordered[sID], bool) {
 //	t.advance()
 //	now := time.Now().Unix()
 //	min := now - t.radius
@@ -158,8 +158,8 @@ func (t *timeIndex) remove(interval intervalFilter) {
 //	}
 
 //	return smallset.NewFrom(IDs...), true
-//	return true
-//}
+	return nil,false
+}
 
 func (t *timeIndex) advance() {
 	now := time.Now().Unix()
