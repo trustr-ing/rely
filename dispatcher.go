@@ -176,7 +176,7 @@ func (d *dispatcher) Index(s subscription) {
 			for _, id := range f.IDs {
 				subs, ok := d.byID[id]
 				if !ok {
-					d.byID[id] = smallset.NewFrom(sid)
+//					d.byID[id] = smallset.NewFrom(sid)
 				} else {
 					subs.Add(sid)
 				}
@@ -186,7 +186,7 @@ func (d *dispatcher) Index(s subscription) {
 			for _, pk := range f.Authors {
 				subs, ok := d.byAuthor[pk]
 				if !ok {
-					d.byAuthor[pk] = smallset.NewFrom(sid)
+//					d.byAuthor[pk] = smallset.NewFrom(sid)
 				} else {
 					subs.Add(sid)
 				}
@@ -202,7 +202,7 @@ func (d *dispatcher) Index(s subscription) {
 					kv := join(key, v)
 					subs, ok := d.byTag[kv]
 					if !ok {
-						d.byTag[kv] = smallset.NewFrom(sid)
+//						d.byTag[kv] = smallset.NewFrom(sid)
 					} else {
 						subs.Add(sid)
 					}
@@ -213,7 +213,7 @@ func (d *dispatcher) Index(s subscription) {
 			for _, k := range f.Kinds {
 				subs, ok := d.byKind[k]
 				if !ok {
-					d.byKind[k] = smallset.NewFrom(sid)
+//					d.byKind[k] = smallset.NewFrom(sid)
 				} else {
 					subs.Add(sid)
 				}
