@@ -158,6 +158,7 @@ func (t *timeIndex) Candidates(createdAt nostr.Timestamp) (*smallset.Ordered[sID
 	}
 
 //	return smallset.NewFrom(IDs...), true
+	return true
 }
 
 func (t *timeIndex) advance() {
